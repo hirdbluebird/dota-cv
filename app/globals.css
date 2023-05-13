@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Sorts Mill Goudy';
+  src: url('/fonts/SortsMillGoudy-Regular.ttf'), url('/fonts/SortsMillGoudy-Italic.ttf');
+}
+
+body {
+  background-color: black;
+  font-family: 'Sorts Mill Goudy', 'Verdana';
+  color: white;
+}
