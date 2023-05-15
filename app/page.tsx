@@ -6,11 +6,19 @@ import Model from '../components/canvas/Canvas'
 
 export default function Home() {
   return (
-    <main>
+    <main style={{
+      display: 'grid',
+      gridTemplateColumns: '50% 50%',
+      alignItems: 'center',
+      height: '100%'
+    }}>
       <div>
         <Model />
       </div>
-      <div>
+      <div style={{
+        maxHeight: '100%',
+        overflow: 'scroll'
+      }}>
         <div className='level'>
           <Image src='/level.webp' width={100} height={100} alt="" />
           8
