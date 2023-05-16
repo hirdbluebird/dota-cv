@@ -1,11 +1,12 @@
 @font-face {
-  font-family: 'Sorts Mill Goudy';
-  src: url('/fonts/SortsMillGoudy-Regular.ttf'), url('/fonts/SortsMillGoudy-Italic.ttf');
+  font-family: "Sorts Mill Goudy";
+  src: url("/fonts/SortsMillGoudy-Regular.ttf"),
+    url("/fonts/SortsMillGoudy-Italic.ttf");
 }
 
 body {
   background-color: black;
-  font-family: 'Sorts Mill Goudy', 'Verdana';
+  font-family: "Sorts Mill Goudy", "Verdana";
   color: white;
 }
 
@@ -19,4 +20,31 @@ body {
 }
 .skills > *:not(:last-child) {
   margin-right: 10px;
+}
+
+@keyframes glow {
+  from {
+    background: radial-gradient(
+      circle,
+      rgba(105, 171, 237, 1) 0%,
+      rgba(9, 9, 121, 0) 49%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle,
+      rgba(105, 171, 237, 1) 0%,
+      rgba(9, 9, 121, 0) 49%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
+  to {
+    background: radial-gradient(
+      circle,
+      rgba(105, 171, 237, 1) 0%,
+      rgba(9, 9, 121, 0) 49%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
 }
