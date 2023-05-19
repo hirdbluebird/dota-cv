@@ -15,6 +15,14 @@ body {
   height: 100%;
 }
 
+ul, ol {
+  padding: 0;
+}
+
+main > div {
+  padding: 10px;
+}
+
 .skills {
   display: flex;
 }
@@ -22,8 +30,68 @@ body {
   margin-right: 10px;
 }
 
+.title,
+.subtitle {
+  text-transform: uppercase;
+}
+.title {
+  color: #fcffff;
+}
+.subtitle {
+  font-size: 14px;
+  color: #797f7f;
+  margin-top: 0;
+}
+.subtitle.with-image {
+  display: inline-flex;
+  align-items: center;
+}
+
+.subtitle.with-image > img {
+  margin-right: 10px;
+}
+
+button {
+  border: 1px solid #4F5052;
+  border-radius: 6px;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #797f7f;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-tabs {
+  display: flex;
+  text-transform: uppercase;
+  color: #4F5052;
+  font-size: 14px;
+  padding-left: 0;
+}
+.nav-tabs ol {
+  padding: 0 10px;
+}
+.nav-tabs ol:after {
+  content: '/';
+  display: inline-block;
+  margin-left: 20px;
+}
+.nav-tabs ol:first-child {
+  padding-left: 0;
+}
+.nav-tabs ol.active {
+  color: #fcffff;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+
 @keyframes glow {
-  from {
+  0% {
     background: radial-gradient(
       circle,
       rgba(105, 171, 237, 1) 0%,
@@ -31,15 +99,31 @@ body {
       rgba(0, 212, 255, 0) 100%
     );
   }
-  50% {
+  10% {
     background: radial-gradient(
       circle,
       rgba(105, 171, 237, 1) 0%,
-      rgba(9, 9, 121, 0) 49%,
+      rgba(9, 9, 121, 0) 66%,
       rgba(0, 212, 255, 0) 100%
     );
   }
-  to {
+  20% {
+    background: radial-gradient(
+      circle,
+      rgba(105, 171, 237, 1) 0%,
+      rgba(9, 9, 121, 0) 77%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
+  30% {
+    background: radial-gradient(
+      circle,
+      rgba(105, 171, 237, 1) 0%,
+      rgba(9, 9, 121, 0) 66%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
+  100% {
     background: radial-gradient(
       circle,
       rgba(105, 171, 237, 1) 0%,

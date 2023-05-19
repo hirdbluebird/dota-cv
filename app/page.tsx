@@ -9,7 +9,6 @@ export default function Home() {
       style={{
         display: "grid",
         gridTemplateColumns: "50% 50%",
-        alignItems: "center",
         height: "100%",
       }}
     >
@@ -26,6 +25,9 @@ export default function Home() {
             top: "-50px",
             right: "-50px",
             padding: "50px",
+            animation: 'glow 3s infinite',
+            transition: 'all 1s linear'
+
           }}
         >
           <Image src="/level.webp" width={100} height={100} alt="" />
@@ -69,17 +71,17 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <button className="button demo">demo hero</button>
+          <button className="demo">demo hero</button>
         </div>
         <div>
-          <nav>
-            <Link href={"#"}>Briefing</Link>
-            <Link href={"#"}>Experience</Link>
-            <Link href={"#"}>Contacts</Link>
-            <Link href={"#"}>About</Link>
-          </nav>
-          <ul>
-            <ol>
+          <ul className="nav nav-tabs">
+            <ol className="active">Briefing</ol>
+            <ol>Experience</ol>
+            <ol>Contacts</ol>
+            <ol>About</ol>
+          </ul>
+          <div className="tab-pane">
+            <div className="tab-content active">
               1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
               magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
@@ -94,8 +96,8 @@ export default function Home() {
               arcu in vestibulum. Pellentesque orci urna, convallis in
               scelerisque in, blandit at libero. Cras nec venenatis velit. In
               hac habitasse platea dictumst.
-            </ol>
-            <ol>
+            </div>
+            <div className="tab-content">
               2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
               magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
@@ -110,8 +112,8 @@ export default function Home() {
               arcu in vestibulum. Pellentesque orci urna, convallis in
               scelerisque in, blandit at libero. Cras nec venenatis velit. In
               hac habitasse platea dictumst.
-            </ol>
-            <ol>
+            </div>
+            <div className="tab-content">
               3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
               magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
@@ -126,8 +128,8 @@ export default function Home() {
               arcu in vestibulum. Pellentesque orci urna, convallis in
               scelerisque in, blandit at libero. Cras nec venenatis velit. In
               hac habitasse platea dictumst.
-            </ol>
-            <ol>
+            </div>
+            <div className="tab-content">
               4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
               magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
@@ -142,8 +144,8 @@ export default function Home() {
               arcu in vestibulum. Pellentesque orci urna, convallis in
               scelerisque in, blandit at libero. Cras nec venenatis velit. In
               hac habitasse platea dictumst.
-            </ol>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
       <script src="anime.js" />
