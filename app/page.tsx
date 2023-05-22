@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import Model from "../components/canvas/Canvas";
+import { Tab } from "../components";
 
 export default function Home() {
   return (
@@ -12,11 +12,7 @@ export default function Home() {
         height: "100%",
       }}
     >
-      <div
-        style={{
-          position: "relative",
-        }}
-      >
+      <section className="wrapper-canvas">
         <Model />
         <div
           className="level"
@@ -25,9 +21,8 @@ export default function Home() {
             top: "-50px",
             right: "-50px",
             padding: "50px",
-            animation: 'glow 3s infinite',
-            transition: 'all 1s linear'
-
+            animation: "glow 3s infinite",
+            transition: "all 1s linear",
           }}
         >
           <Image src="/level.webp" width={100} height={100} alt="" />
@@ -44,8 +39,8 @@ export default function Home() {
             8
           </span>
         </div>
-      </div>
-      <div
+      </section>
+      <section
         style={{
           maxHeight: "100%",
           overflow: "scroll",
@@ -73,82 +68,37 @@ export default function Home() {
         <div>
           <button className="demo">demo hero</button>
         </div>
-        <div>
-          <ul className="nav nav-tabs">
-            <ol className="active">Briefing</ol>
-            <ol>Experience</ol>
-            <ol>Contacts</ol>
-            <ol>About</ol>
-          </ul>
-          <div className="tab-pane">
-            <div className="tab-content active">
-              1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
-              magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
-              ornare ut libero non varius. Cras dignissim lectus ut consequat
-              porta. Sed dapibus, erat ullamcorper congue faucibus, eros nulla
-              consequat enim, vitae egestas dolor ipsum eget nibh. Donec
-              sagittis augue id mauris egestas dignissim. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. In faucibus, dui non efficitur blandit, turpis sapien
-              lacinia lacus, nec convallis ante dolor eget ante. Aenean at
-              tempus ipsum. Nam tempus ornare est ut mollis. Praesent iaculis eu
-              arcu in vestibulum. Pellentesque orci urna, convallis in
-              scelerisque in, blandit at libero. Cras nec venenatis velit. In
-              hac habitasse platea dictumst.
-            </div>
-            <div className="tab-content">
-              2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
-              magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
-              ornare ut libero non varius. Cras dignissim lectus ut consequat
-              porta. Sed dapibus, erat ullamcorper congue faucibus, eros nulla
-              consequat enim, vitae egestas dolor ipsum eget nibh. Donec
-              sagittis augue id mauris egestas dignissim. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. In faucibus, dui non efficitur blandit, turpis sapien
-              lacinia lacus, nec convallis ante dolor eget ante. Aenean at
-              tempus ipsum. Nam tempus ornare est ut mollis. Praesent iaculis eu
-              arcu in vestibulum. Pellentesque orci urna, convallis in
-              scelerisque in, blandit at libero. Cras nec venenatis velit. In
-              hac habitasse platea dictumst.
-            </div>
-            <div className="tab-content">
-              3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
-              magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
-              ornare ut libero non varius. Cras dignissim lectus ut consequat
-              porta. Sed dapibus, erat ullamcorper congue faucibus, eros nulla
-              consequat enim, vitae egestas dolor ipsum eget nibh. Donec
-              sagittis augue id mauris egestas dignissim. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. In faucibus, dui non efficitur blandit, turpis sapien
-              lacinia lacus, nec convallis ante dolor eget ante. Aenean at
-              tempus ipsum. Nam tempus ornare est ut mollis. Praesent iaculis eu
-              arcu in vestibulum. Pellentesque orci urna, convallis in
-              scelerisque in, blandit at libero. Cras nec venenatis velit. In
-              hac habitasse platea dictumst.
-            </div>
-            <div className="tab-content">
-              4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse hendrerit vitae ante nec malesuada. Curabitur eros
-              magna, mollis ac lectus viverra, euismod ultrices justo. Etiam
-              ornare ut libero non varius. Cras dignissim lectus ut consequat
-              porta. Sed dapibus, erat ullamcorper congue faucibus, eros nulla
-              consequat enim, vitae egestas dolor ipsum eget nibh. Donec
-              sagittis augue id mauris egestas dignissim. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. In faucibus, dui non efficitur blandit, turpis sapien
-              lacinia lacus, nec convallis ante dolor eget ante. Aenean at
-              tempus ipsum. Nam tempus ornare est ut mollis. Praesent iaculis eu
-              arcu in vestibulum. Pellentesque orci urna, convallis in
-              scelerisque in, blandit at libero. Cras nec venenatis velit. In
-              hac habitasse platea dictumst.
-            </div>
-          </div>
-        </div>
-      </div>
-      <script src="anime.js" />
+        <Tab.Container defaultActiveTab="about">
+          <Tab.Nav>
+            <Tab.NavItem id="about">About</Tab.NavItem>
+            <Tab.NavItem id="experience">Experience</Tab.NavItem>
+            <Tab.NavItem id="contacts">Contacts</Tab.NavItem>
+          </Tab.Nav>
+          <Tab.Content>
+            <Tab.ContentItem id="about">
+              Worked with JavaScript on client-side and backend, embeded. <br />
+              Ate a dog on template creation of a site, familiar with popular UI
+              libraries and built own. Took a part in creation of React engine,
+              which generated sites depending on configs. Yep, two or more sites
+              (domains) in one code base. Including dark modes. So I know how to
+              center "div". <br /> Prefer Redux. Prefer React. Life is too short
+              to know all UI frameworks and state managers, don't propose me
+              anything else please. <br /> Experience in creation of custom
+              Webpack plugins and custom sonfigs. <br /> Familiar with unit
+              testing, also familiar with end-to-end testing and setup. <br />{" "}
+              Managed juniors, made some code reviews, mentoring. <br /> Git,
+              terminal. That's the way. <br /> Unix is pretty good, Windows is
+              for games to me, but I don't mind if it will be an environment.
+              <br /> Enthusiast, writing articles about code or coders life.
+              Keep learning in spare time. I have a strong feeling, that I'm
+              still somewhere at the top of iceberg of coding, I'm urge to dive
+              deeper.
+            </Tab.ContentItem>
+            <Tab.ContentItem id="experience">experience</Tab.ContentItem>
+            <Tab.ContentItem id="contacts">contacts</Tab.ContentItem>
+          </Tab.Content>
+        </Tab.Container>
+      </section>
     </main>
   );
 }

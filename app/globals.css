@@ -13,14 +13,16 @@ body {
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
 }
 
 main > div {
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .skills {
@@ -52,7 +54,7 @@ main > div {
 }
 
 button {
-  border: 1px solid #4F5052;
+  border: 1px solid #4f5052;
   border-radius: 6px;
   background-color: transparent;
   padding: 10px 20px;
@@ -64,31 +66,34 @@ button {
 .nav-tabs {
   display: flex;
   text-transform: uppercase;
-  color: #4F5052;
+  color: #4f5052;
   font-size: 14px;
   padding-left: 0;
 }
-.nav-tabs ol {
+.nav-tabs > a {
   padding: 0 10px;
 }
-.nav-tabs ol:after {
-  content: '/';
+.nav-tabs > a:not(:last-child):after {
+  content: "/";
   display: inline-block;
   margin-left: 20px;
 }
-.nav-tabs ol:first-child {
+.nav-tabs > a:first-child {
   padding-left: 0;
 }
-.nav-tabs ol.active {
+.nav-tabs > a.active {
   color: #fcffff;
 }
-.tab-content {
+.tab-content-item {
   display: none;
 }
-.tab-content.active {
+.tab-content-item.active {
   display: block;
 }
 
+.wrapper-canvas {
+  position: relative;
+}
 
 @keyframes glow {
   0% {

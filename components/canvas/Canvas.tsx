@@ -10,7 +10,7 @@ function Model() {
 export default function Home() {
   return (
     <div style={{
-        height: 900
+        height: 820
     }}>
       <Suspense>
         <Canvas >
