@@ -1,8 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  HTMLAttributes,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
-const TabContext = createContext({ activeTab: "", setActiveTab: () => {} });
+export interface TabContextType {
+  activeTab: string;
+  setActiveTab: Dispatch<SetStateAction<string>>;
+}
 
-export const TabContainer = ({ children, defaultActiveTab }) => {
+export interface TabContainerProps extends HTMLAttributes<HTMLElement> {
+  defaultActiveTab: string;
+}
+
+const TabContext = createContext<TabContextType>({
+  activeTab: "",
+  setActiveTab: () => {},
+});
+
+export const TabContainer = ({ children, defaultActiveTab }: TabContainerProps) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
   return (
     <TabContext.Provider
@@ -11,16 +30,16 @@ export const TabContainer = ({ children, defaultActiveTab }) => {
         setActiveTab,
       }}
     >
-      <div>{children.map((e) => e)}</div>
+      <div>{children}</div>
     </TabContext.Provider>
   );
 };
 
-export const TabNav = ({ children }) => {
-  return <nav className="nav nav-tabs">{children.map((e) => e)}</nav>;
+export const TabNav = ({ children }: HTMLAttributes<HTMLElement>) => {
+  return <nav className="nav nav-tabs">{children}</nav>;
 };
 
-export const TabNavItem = ({ children, id }) => {
+export const TabNavItem = ({ children, id }: HTMLAttributes<HTMLElement>) => {
   const { activeTab, setActiveTab } = useContext(TabContext);
 
   return (
@@ -34,11 +53,14 @@ export const TabNavItem = ({ children, id }) => {
   );
 };
 
-export const TabContent = ({ children }) => {
-  return <div className="tab-content">{children.map((e) => e)}</div>;
+export const TabContent = ({ children }: HTMLAttributes<HTMLElement>) => {
+  return <div className="tab-content">{children}</div>;
 };
 
-export const TabContentItem = ({ children, id }) => {
+export const TabContentItem = ({
+  children,
+  id,
+}: HTMLAttributes<HTMLElement>) => {
   const { activeTab } = useContext(TabContext);
 
   return (

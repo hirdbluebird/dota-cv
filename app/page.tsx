@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Model from "../components/canvas/Canvas";
-import { Tab } from "../components";
+import { ExperienceSection, Tab } from "../components";
+import experience from "./experience"
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
         <h2 className="title">Eugene Mikhushkin</h2>
         <h4 className="subtitle with-image">
           <Image src="/js.png" width={24} height={24} alt="" />
-          Javascript developer
+          Javascript typescript frontend embeded
         </h4>
         <div className="skills">
           <div className="tooltip">
@@ -82,19 +83,23 @@ export default function Home() {
               which generated sites depending on configs. Yep, two or more sites
               (domains) in one code base. Including dark modes. So I know how to
               center "div". <br /> Prefer Redux. Prefer React. Life is too short
-              to know all UI frameworks and state managers, don't propose me
-              anything else please. <br /> Experience in creation of custom
-              Webpack plugins and custom sonfigs. <br /> Familiar with unit
-              testing, also familiar with end-to-end testing and setup. <br />{" "}
-              Managed juniors, made some code reviews, mentoring. <br /> Git,
-              terminal. That's the way. <br /> Unix is pretty good, Windows is
-              for games to me, but I don't mind if it will be an environment.
+              to get familiar with all UI frameworks and state managers, don't
+              propose me anything else please. <br /> Experience in creation of
+              custom Webpack plugins and custom sonfigs. <br /> Familiar with
+              unit testing, also familiar with end-to-end testing and setup.{" "}
+              <br /> Managed juniors, made some code reviews, mentoring. <br />{" "}
+              Git, terminal. That's the way. <br /> Unix is pretty good, Windows
+              is for games to me, but I don't mind if it will be an environment.
               <br /> Enthusiast, writing articles about code or coders life.
               Keep learning in spare time. I have a strong feeling, that I'm
               still somewhere at the top of iceberg of coding, I'm urge to dive
               deeper.
             </Tab.ContentItem>
-            <Tab.ContentItem id="experience">experience</Tab.ContentItem>
+            <Tab.ContentItem id="experience">
+              {experience.map((exp) => (
+                <ExperienceSection {...exp} />
+              ))}
+            </Tab.ContentItem>
             <Tab.ContentItem id="contacts">contacts</Tab.ContentItem>
           </Tab.Content>
         </Tab.Container>
