@@ -18,7 +18,7 @@ export const ExperienceSection = ({
         {responsibilities?.map((resp) => {
           const { title, text } = resp;
           return (
-            <ol>
+            <ol key={title}>
               <b>{title}</b>. {text}
             </ol>
           );

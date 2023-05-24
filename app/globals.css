@@ -21,6 +21,13 @@ ol {
   padding: 0;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100%;
+  align-items: center;
+}
+
 main > div {
   padding: 0 10px;
 }
@@ -93,6 +100,13 @@ button {
 
 .wrapper-canvas {
   position: relative;
+  height: 820px;
+}
+.wrapper-info {
+  max-height: 100%;
+  overflow: scroll;
+  position: relative;
+  height: 100%;
 }
 
 @keyframes glow {

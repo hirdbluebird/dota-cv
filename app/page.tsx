@@ -1,81 +1,46 @@
 "use client";
 import Image from "next/image";
 import Model from "../components/canvas/Canvas";
-import { ExperienceSection, Tab } from "../components";
-import experience from "./experience"
+import { ExperienceSection, Tab, Badge, Skills } from "../components";
+import experience from "./experience";
 
 export default function Home() {
   return (
-    <main
-      style={{
-        display: "grid",
-        gridTemplateColumns: "50% 50%",
-        height: "100%",
-      }}
-    >
+    <main>
       <section className="wrapper-canvas">
         <Model />
-        <div
-          className="level"
-          style={{
-            position: "absolute",
-            top: "-50px",
-            right: "-50px",
-            padding: "50px",
-            animation: "glow 3s infinite",
-            transition: "all 1s linear",
-          }}
-        >
-          <Image src="/level.webp" width={100} height={100} alt="" />
-          <span
-            style={{
-              position: "absolute",
-              fontSize: "40px",
-              top: "50%",
-              right: "50%",
-              transform: "translate(50%, -50%)",
-              textShadow: "black 0 0 5px",
-            }}
-          >
-            8
-          </span>
-        </div>
+        <Badge />
       </section>
-      <section
-        style={{
-          maxHeight: "100%",
-          overflow: "scroll",
-        }}
-      >
-        <h2 className="title">Eugene Mikhushkin</h2>
-        <h4 className="subtitle with-image">
+      <section className="wrapper-info">
+        <h1 className="title">Eugene Mikhushkin</h1>
+        <h3 className="subtitle with-image">
           <Image src="/js.png" width={24} height={24} alt="" />
           Javascript typescript frontend embeded
-        </h4>
-        <div className="skills">
-          <div className="tooltip">
-            <Image src="/electron.png" width={50} height={50} alt="" />
-          </div>
-          <div className="tooltip">
-            <Image src="/next.png" width={50} height={50} alt="" />
-          </div>
-          <div className="tooltip">
-            <Image src="/react.png" width={60} height={50} alt="" />
-          </div>
-          <div className="tooltip">
-            <Image src="/node.png" width={50} height={50} alt="" />
-          </div>
-        </div>
-        <div>
-          <button className="demo">demo hero</button>
-        </div>
-        <Tab.Container defaultActiveTab="about">
+        </h3>
+        <Skills />
+        <button className="demo">demo hero</button>
+        <Tab.Container defaultActiveTab="briefing">
           <Tab.Nav>
-            <Tab.NavItem id="about">About</Tab.NavItem>
+            <Tab.NavItem id="briefing">Briefing</Tab.NavItem>
             <Tab.NavItem id="experience">Experience</Tab.NavItem>
+            <Tab.NavItem id="about">About</Tab.NavItem>
             <Tab.NavItem id="contacts">Contacts</Tab.NavItem>
           </Tab.Nav>
           <Tab.Content>
+            <Tab.ContentItem id="briefing">
+              Character name is Eugene. He's seeking for a good paid job with
+              good project idea and good coworkers. He's already seen (as he
+              think) many challenges and not afraid of outdated code, technical
+              debts, absens of documentation and of course teammates, who love
+              to push commits with 50+ files changes in core files. <br />{" "}
+              Carreer in one company will definetely satisfy him. It's easier to
+              work with less people as possible. Not a fan of big turnover rate
+              in personal life and same on work. <br /> Job should be remote.
+              Big debuff is that he don't know where he will live tommorow
+              because of circumstances. <br /> Even if some requirments was not
+              met, employers who "demo'ed" him was not dissapointed, because of
+              versality of character.
+            </Tab.ContentItem>
             <Tab.ContentItem id="about">
               Worked with JavaScript on client-side and backend, embeded. <br />
               Ate a dog on template creation of a site, familiar with popular UI
@@ -97,10 +62,23 @@ export default function Home() {
             </Tab.ContentItem>
             <Tab.ContentItem id="experience">
               {experience.map((exp) => (
-                <ExperienceSection {...exp} />
+                <ExperienceSection key={exp.timeline} {...exp} />
               ))}
             </Tab.ContentItem>
-            <Tab.ContentItem id="contacts">contacts</Tab.ContentItem>
+            <Tab.ContentItem id="contacts">
+              <p>
+                <b>email</b>: bluebirdyourdestiny@gmail.com
+              </p>
+              <p>
+                <b>telegram</b>: @hirdbluebird
+              </p>
+              <p>
+                <b>skype</b>: hird_blue_bird
+              </p>
+              <p>
+                <b>github</b>: https://github.com/hirdbluebird
+              </p>
+            </Tab.ContentItem>
           </Tab.Content>
         </Tab.Container>
       </section>
