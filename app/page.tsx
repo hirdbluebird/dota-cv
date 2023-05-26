@@ -3,6 +3,7 @@ import Image from "next/image";
 import Model from "../components/canvas/Canvas";
 import { ExperienceSection, Tab, Badge, Skills } from "../components";
 import experience from "./experience";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -67,16 +68,16 @@ export default function Home() {
             </Tab.ContentItem>
             <Tab.ContentItem id="contacts">
               <p>
-                <b>email</b>: bluebirdyourdestiny@gmail.com
+                <b>email</b>: <Link href={"mailto:bluebirdyourdestiny@gmail.com"}>bluebirdyourdestiny@gmail.com</Link>
               </p>
               <p>
-                <b>telegram</b>: @hirdbluebird
+                <b>telegram</b>: <Link href={"https://t.me/hirdbluebird"}>@hirdbluebird</Link>
               </p>
               <p>
-                <b>skype</b>: hird_blue_bird
+                <b>skype</b>: <Link href={"skype:hird_blue_bird?chat"}>hird_blue_bird</Link>
               </p>
               <p>
-                <b>github</b>: https://github.com/hirdbluebird
+                <b>github</b>: <Link href={"https://github.com/hirdbluebird"}>https://github.com/hirdbluebird</Link>
               </p>
             </Tab.ContentItem>
           </Tab.Content>

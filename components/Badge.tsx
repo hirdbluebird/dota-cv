@@ -13,7 +13,7 @@ export const Badge = () => {
             transition: "all 1s linear",
           }}
         >
-          <Image src="/level.webp" width={100} height={100} alt="" />
+          <Image src="/level.webp" width={100} height={100} alt="" title="Years of experience" />
           <span
             style={{
               position: "absolute",
@@ -22,6 +22,7 @@ export const Badge = () => {
               right: "50%",
               transform: "translate(50%, -50%)",
               textShadow: "black 0 0 5px",
+              pointerEvents: 'none'
             }}
           >
             8

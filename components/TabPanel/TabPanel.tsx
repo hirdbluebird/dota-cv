@@ -21,7 +21,10 @@ const TabContext = createContext<TabContextType>({
   setActiveTab: () => {},
 });
 
-export const TabContainer = ({ children, defaultActiveTab }: TabContainerProps) => {
+export const TabContainer = ({
+  children,
+  defaultActiveTab,
+}: TabContainerProps) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
   return (
     <TabContext.Provider
@@ -30,7 +33,7 @@ export const TabContainer = ({ children, defaultActiveTab }: TabContainerProps) 
         setActiveTab,
       }}
     >
-      <div>{children}</div>
+      <div className="tab-container">{children}</div>
     </TabContext.Provider>
   );
 };

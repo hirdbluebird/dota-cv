@@ -10,10 +10,10 @@ function Model() {
 export default function Home() {
   return (
     <Suspense>
-      <Canvas>
+      <Canvas camera={{fov: 10, position: [10, 10, -10]}} >
         <ambientLight />
         <Model />
-        <OrbitControls />
+        <OrbitControls target={[0,-1,1]} enableZoom={false} autoRotate minPolarAngle={Math.PI/2} maxPolarAngle={Math.PI/2}/>
       </Canvas>
     </Suspense>
   );
