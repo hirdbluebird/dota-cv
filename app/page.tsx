@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className="title">Eugene Mikhushkin</h1>
         <h3 className="subtitle with-image">
           <Image src="/js.png" width={24} height={24} alt="" />
-          Javascript typescript frontend embeded
+          Javascript typescript frontend backend embeded
         </h3>
         <Skills />
         <button className="demo">demo hero</button>
