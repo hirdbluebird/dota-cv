@@ -48,6 +48,7 @@ export const TabNavItem = ({ children, id }: HTMLAttributes<HTMLElement>) => {
   return (
     <a
       id={id}
+      // @ts-ignore
       onClick={(e) => setActiveTab(e.target.id)}
       className={`${activeTab === id && "active"}`}
     >
